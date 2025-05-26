@@ -1,0 +1,11 @@
+*env/
+*.env
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+db.*
+*.db
+*.sqllite
+*.sqllite3
+*.tmp
