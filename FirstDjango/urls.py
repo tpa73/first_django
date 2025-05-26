@@ -16,7 +16,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from MainApp import views
+
+
+#items = [
+#   {"id": 1, "name": "Кроссовки abibas" ,"quantity":5},
+#   {"id": 2, "name": "Куртка кожаная" ,"quantity":2},
+#   {"id": 5, "name": "Coca-cola 1 литр" ,"quantity":12},
+#   {"id": 7, "name": "Картофель фри" ,"quantity":0},
+#   {"id": 8, "name": "Кепка" ,"quantity":124},
+#]
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("", views.home),
+    path("items", views.items_list),
+    path("<int:num>", views.about)
 ]
+
+#    path("5", views.coca),
+#    path("7", views.fri),
+#    path("8", views.kepka)
+#]
