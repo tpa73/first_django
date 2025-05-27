@@ -22,7 +22,11 @@ def home(request):
     #<h1>Learning Django...</h1
     #<strong>Author</strong>
     #"""
-    return render(request, "index.html")
+    context = {
+        "name":"Петров ИИ",
+        "email":"hgh@hohjlkh.ru"
+    }
+    return render(request, "index.html", context)
 
 def abibas(request):
     text = """
