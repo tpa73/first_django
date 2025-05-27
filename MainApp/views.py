@@ -18,11 +18,11 @@ for item in items:
 
 
 def home(request):
-    text = """
-    <h1>Learning Django...</h1
-    <strong>Author</strong>
-    """
-    return(HttpResponse(text))
+    #text = """
+    #<h1>Learning Django...</h1
+    #<strong>Author</strong>
+    #"""
+    return render(request, "index.html")
 
 def abibas(request):
     text = """
@@ -42,15 +42,16 @@ def about(request, num):
     return(HttpResponse(text))
 
 def items_list(request):
+    
     text = """
     <h1>Learning Django...</h1
     """
-    for i in range(len(items)):
-        text = text + "\n" + "<h2>" + str(items[i]) + "\n"
-    text += "<br><br>"
-
-    for i in range(len(items)):
-        text = text + 'a href="' + str(items["id"]) + '">'
-
+    for item in items:
+        text = text + "<h2>" + str(item) + "</h2><br>"
+    text = text + "<br><br>"
+    text = text.replace("\'", "")
+ 
+    for item in items:
+        text = text + '<a href="' + str(item["id"]) + '">' + item["name"] + "</a><br>"
 
     return(HttpResponse(text))
