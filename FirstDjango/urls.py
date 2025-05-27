@@ -30,8 +30,9 @@ from MainApp import views
 
 urlpatterns = [
     path("", views.home),
+    path('item/<int:item_id>', views.get_item),
     path("items", views.items_list),
-    path("<int:num>", views.about)
+    path("about", views.about)
 ]
 
 #    path("5", views.coca),
