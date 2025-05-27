@@ -35,7 +35,13 @@ def home(request):
     #         <br><br>
     #         <p> <a href="/items"> Назад к списку товаров </a></p>
     #         """
-     return HttpResponse(result)
+    # return HttpResponse(result)
+
+    context = {
+        "name": "Петров Иван Николаевич",
+        "email": "my_mail@mail.ru",
+    }
+    return render(request, "index.html", context)
 
 def about(request):
 #     text = """
@@ -53,8 +59,18 @@ def about(request):
 #         "phone":" +76465465464",
 #         "email":" fjhf@kgkg.ru"
 #     }
-    
-#     context = {"author":author}
+    author = {
+        "name": "Иван",
+        "middle_name": "Петрович",
+        "last_name": "Иванов",
+        "phone": "8-923-600-01-02",
+        "email": "vasya@mail.ru",
+    }
+    context = {
+        "author": author
+    }
+    return render(request, "about.html", context)
+
     
     return render(request, "about.html", context)
 
