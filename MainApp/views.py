@@ -4,8 +4,8 @@ from .models import Item
 
 def home(request):
     context = {
-        "name": "Петров Иван Николаевич",
-        "email": "my_mail@mail.ru",
+        "name": "Петров Peter Николаевич",
+        "email": "fdhjgf@gisgia.ru",
     }
     return render(request, "index.html", context)
 
