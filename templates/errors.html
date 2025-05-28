@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error page</title>
+    <title>Errors page</title>
 </head>
 <body>
     <nav>
-        / <a href >
+        / <a href="/">Home</a> / <a href="/about">About</a> / <a href="/items">Items</a>
     </nav>
+    <br>
+    <hr>
+    <ul>
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

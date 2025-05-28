@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from MainApp import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 #items = [
@@ -28,12 +30,19 @@ from MainApp import views
 #]
 
 
+# urlpatterns = [
+#     path("", views.home),
+#     path('item/<int:item_id>', views.get_item, name=),
+#     path("items", views.items_list),
+#     path("about", views.about, name="ab")
+# ]
+
 urlpatterns = [
-    path("", views.home),
-    path('item/<int:item_id>', views.get_item),
-    path("items", views.items_list),
-    path("about", views.about)
-]
+    path('', views.home, name='home'),
+    path('about', views.about, name='about'),
+    path('item/<int:item_id>', views.get_item, name='item-detail'),
+    path('items', views.get_items, name='items-list'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 #    path("5", views.coca),
 #    path("7", views.fri),
