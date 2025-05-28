@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main page</title>
-</head>
-<body>
-    <nav>
-        / <a href="/">Home</a> / <a href="/about">About</a> / <a href="/items">Items</a>
-    </nav>
-    <hr>
+{%extends "base.html"%}
+{%load static%}
+
+{%block title%} Main page {% endblock %}
+{%block content%}
+<img width="50px" src="{% static "images/django.svg" %}" alt="django_image">
     <h1> Приветствую! </h1>
 
     Меня зовут <i>{{ name }}.</i><br>
@@ -17,6 +11,4 @@
     <br>
     Это главная страница сайта.<br>
     <i>Сайт пока в разработке...</i>
-    
-</body>
-</html>
+{% endblock %}
