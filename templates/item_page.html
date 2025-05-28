@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=+, initial-scale=1.0">
-    <title>Item page</title>
-</head>
-<body>
-    <nav>
-        / <a href="/">Home</a> / <a href="/about">About</a> / <a href="/items">Items</a>
-    </nav>
-    <hr>
+
+    {% extends "base.html" %}
+
+    {%block title%}Item page{%endblock%}
+
+{%block content%}
+    
     <h2> Имя: {{ item.name }} </h2>
     <div>
         <p>Количество: {{ item.count | default:"Товар отсутствует" }}</p>
@@ -20,9 +15,14 @@
     <div>
         <p>Описание: {{ item.description }}</p>
     </div>
-    
-    <br><br>
-    <p> <a href="/items"> Назад к списку товаров </a></p>
+    <div>
+        <p>Цвета: {{ colors }}</p>
+        {% for c in colors %}
+        <p>{{c}} <span style="color:{{c}}">&#9632</span></p>
+        {%endfor%}
+    </div>
+   <!-- <div style="color:blue">
+        &#9632;
+    </div> -->
 
-</body>
-</html>
+{%endblock content%}
